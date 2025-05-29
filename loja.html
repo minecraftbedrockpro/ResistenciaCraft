@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja de Minecraft - Em Breve!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: url('https://i.imgur.com/rI2Jj8p.png') repeat;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      background: #2d2d2d;
+      padding: 20px;
+      border-bottom: 5px solid #00ff00;
+    }
+
+    header h1 {
+      color: #00ff00;
+      text-shadow: 2px 2px #000;
+      margin: 0;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    nav a {
+      color: #ffffff;
+      background-color: #444;
+      padding: 10px 20px;
+      margin: 5px;
+      display: inline-block;
+      text-decoration: none;
+      border: 2px solid #00ff00;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #00ff00;
+      color: #000;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 4px solid #00ff00;
+      box-shadow: 0 0 20px #00ff00;
+      margin-top: 40px;
+    }
+
+    .status {
+      font-size: 18px;
+      color: #ff4444;
+      margin: 20px 0;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .minecraft-icon {
+      width: 100px;
+      margin-top: 20px;
+      transition: transform 0.5s;
+    }
+
+    .minecraft-icon:hover {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #111;
+      color: #aaa;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Loja de Minecraft</h1>
+    <nav>
+      <a href="index.html#">Início</a>
+      <a href="#">Produtos</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Em breve...</h2>
+    <p class="status">Ainda não estamos vendendo nada, mas prepare-se para grandes aventuras!</p>
+    <img class="minecraft-icon" src="https://www.minecraft.net/content/dam/minecraft/pmp/minecraft_logo.png" alt="Minecraft Logo">
+  </div>
+
+  <footer>
+    &copy; 2025 Loja de Minecraft. Não afiliado à Mojang ou Microsoft.
+  </footer>
+
+  <script>
+    // Script de boas-vindas animado
+    document.addEventListener('DOMContentLoaded', function() {
+      const titulo = document.querySelector('h2');
+      let textoOriginal = titulo.textContent;
+      let i = 0;
+
+      function digitarTexto() {
+        if (i <= textoOriginal.length) {
+          titulo.textContent = textoOriginal.substring(0, i) + "_";
+          i++;
+          setTimeout(digitarTexto, 100);
+        } else {
+          titulo.textContent = textoOriginal;
+        }
+      }
+
+      titulo.textContent = "";
+      digitarTexto();
+    });
+  </script>
+</body>
+</html>

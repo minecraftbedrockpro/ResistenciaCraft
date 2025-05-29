@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regras - ResistenciaCraft</title>
+    <link rel="stylesheet" href="css/barra.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      padding-top: 10px;
+      padding-bottom: 140px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #444;
+    }
+
+    code {
+      display: block;
+      color: #ccc;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra será carregada dinamicamente -->
+  <div id="barra-container"></div>
+
+  <div id="conteudo">
+    <h1>Regras e Políticas</h1>
+    <pre><code>
+📜 <span id="regras">Regras e Políticas</span>
+
+1. Regras Gerais
+- Proibido o uso de hacks, cheats ou modificações que deem vantagem injusta.
+- Proibido xingamentos, ofensas, racismo, homofobia, machismo ou qualquer discurso de ódio.
+- Proibido explorar bugs do jogo ou do servidor — reporte à staff.
+
+2. PvP e Proteção de Terrenos
+- O PvP é liberado em todo o servidor.
+- O servidor possui sistema de proteção de terrenos via plugin.
+- Construções fora de áreas protegidas <strong>podem ser destruídas por outros jogadores</strong>, e <strong>isso não é considerado infração</strong>.
+
+3. <span id="comercio">Comércio</span>
+- Trocas devem ser feitas usando o plugin de trade para segurança.
+- Negociações no Discord devem ocorrer apenas nos canais autorizados.
+
+4. <span id="penalidades">Penalidades</span>
+- As punições são aplicadas pela staff e variam conforme a gravidade da infração.
+- Banimentos com provas <strong>não geram direito a reembolso</strong>.
+
+🔒 <span id="privacidade">Política de Privacidade</span>
+- Coletamos apenas nicknames, IPs e histórico de punições.
+- Não coletamos e-mails, nomes reais ou dados sensíveis.
+- Os dados são usados apenas internamente e não são compartilhados.
+
+📑 <span id="termos">Termos de Uso</span>
+- Ao utilizar o site ou servidor, você concorda com todas as regras e termos.
+- O conteúdo pode ser alterado a qualquer momento.
+
+👶 <span id="idade">Idade Recomendada</span>
+- Recomendado para maiores de 12 anos.
+- Menores podem jogar, mas devem seguir as regras.
+
+📬 <span id="suporte">Suporte</span>
+- Suporte via canal no Discord oficial.
+
+💸 <span id="reembolso">Reembolso</span>
+- Compras na loja não são reembolsáveis.
+- Se houver falha técnica comprovada, pode haver análise.
+
+⚠️ <span id="aviso">Aviso</span>
+- O servidor não se responsabiliza por construções destruídas fora de áreas protegidas nem por perdas em negociações fora do sistema oficial.
+    </code></pre>
+  </div>
+
+  <footer class="footer">
+    <a href="#regras">Regras</a>
+    <a href="#comercio">Comércio</a>
+    <a href="#penalidades">Penalidades</a>
+    <a href="#privacidade">Privacidade</a>
+    <a href="#termos">Termos</a>
+    <a href="#idade">Idade</a>
+    <a href="#suporte">Suporte</a>
+    <a href="#reembolso">Reembolso</a>
+    <a href="#aviso">Aviso</a>
+  </footer>
+
+  <script>
+    // Destaca e rola suavemente até o id clicado
+    document.querySelectorAll('.footer a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = this.getAttribute('href').substring(1);
+        const target = document.getElementById(id);
+        if (target) {
+          const topOffset = -50;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset + topOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // remove destaque anterior
+          document.querySelectorAll('.highlighted').forEach(el => el.classList.remove('highlighted'));
+          target.classList.add('highlighted');
+        }
+      });
+    });
+  </script>
+
+  <script src="js/include-barra.js"></script>
+
+</body>
+</html>

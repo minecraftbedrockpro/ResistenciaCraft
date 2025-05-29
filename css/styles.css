@@ -1,0 +1,127 @@
+/* Ajustes para a página inicial (index) */
+
+.inicio-main {
+  position: relative;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: monospace, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 320px; /* Espaço para o widget do Discord fixo */
+  box-sizing: border-box;
+}
+
+.widget-discord {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 400px;
+  z-index: 10000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.bloco-discord pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  max-width: 600px;
+  border: 1px solid #444;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #111;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+/* Reset margin e padding para tirar bordas/brilhos nas bordas da página */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* fundo preto */
+  overflow-x: hidden; /* evita barra horizontal */
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .inicio-main {
+    padding-left: 20px; /* Menos espaço para o widget no celular */
+  }
+
+  .widget-discord {
+    width: 250px; /* Reduzindo o tamanho no celular */
+    height: 350px;
+  }
+
+  .bloco-discord pre {
+    font-size: 1rem; /* Ajustando o tamanho da fonte */
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inicio-main {
+    padding-left: 0; /* Retirando padding para caber no celular */
+    padding-right: 0; /* Evitar espaçamento adicional */
+  }
+
+  .widget-discord {
+    width: 200px; /* Menor widget no celular */
+    height: 300px;
+  }
+
+  .bloco-discord pre {
+    font-size: 0.9rem; /* Reduzindo ainda mais no celular */
+    padding: 10px;
+  }
+}
+.inicio-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.bloco-bemvindo {
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.bloco-bemvindo h1 {
+  font-size: 2.5rem;
+  color: #f39c12;
+}
+
+.bloco-bemvindo p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #ccc;
+}
+
+.btn-explorar {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #f39c12;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-explorar:hover {
+  background-color: #f39c12;
+}
