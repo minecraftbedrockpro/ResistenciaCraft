@@ -5,184 +5,223 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servidores - ResistenciaCraft</title>
   <link rel="stylesheet" href="css/barra.css" />
-<style>
-  body {
-    margin: 0;
-    background-color: #000;
-    font-family: Arial, sans-serif;
-    color: white;
-  }
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
 
-  .servidores-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 2rem;
-  }
+    .servidores-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
 
-  /* BLOCO .servidor */
-  .servidor {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #1a1a1a;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px 0;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  }
+    /* === Servidor Principal (em manutenção) === */
+    .servidor {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .servidor img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    margin-right: 20px;
-    object-fit: cover;
-  }
+    .servidor img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      margin-right: 20px;
+      object-fit: cover;
+    }
 
-  .servidor-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
+    .servidor-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
 
-  .servidor-info h2 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-    color: #f3ac12;
-  }
+    .servidor-info h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: #f3ac12;
+    }
 
-  .servidor-info p {
-    margin: 0 0 10px;
-    font-size: 1rem;
-    color: #ccc;
-  }
+    .servidor-info p {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: #ccc;
+    }
 
-  .botoes {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
+    /* === Realm === */
+    .servidor2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-  }
+    .servidor2 img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      margin-right: 20px;
+      object-fit: cover;
+    }
 
-  .btn.link {
-    background-color: #ff7b00;
-    color: white;
-  }
+    .servidor2-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
 
-  .btn.link:hover {
-    background-color: #f39c12;
-  }
+    .servidor2-info h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: #c503bb;
+    }
 
-  .btn.copiar {
-    background-color: #0066cc;
-    color: white;
-  }
+    .servidor2-info p {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: #ccc;
+    }
 
-  .btn.copiar:hover {
-    background-color: #004c99;
-  }
+    .botoes2 {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-  .copiado-msg {
-    font-size: 0.9rem;
-    color: #f39c12;
-    margin-left: 10px;
-    display: none;
-  }
+    .btn2 {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
 
-  /* BLOCO .servidor2 */
-  .servidor2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #1a1a1a;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px 0;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  }
+    .btn2.link {
+      background-color: #ff00f2;
+      color: white;
+    }
 
-  .servidor2 img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    margin-right: 20px;
-    object-fit: cover;
-  }
+    .btn2.link:hover {
+      background-color: #ff00f263;
+    }
 
-  .servidor2-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
+    .btn2.copiar {
+      background-color: #0066cc;
+      color: white;
+    }
 
-  .servidor2-info h2 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-    color: #c503bb;
-  }
+    .btn2.copiar:hover {
+      background-color: #004c99;
+    }
 
-  .servidor2-info p {
-    margin: 0 0 10px;
-    font-size: 1rem;
-    color: #ccc;
-  }
+    .copiado-msg2 {
+      font-size: 0.9rem;
+      color: #f39c12;
+      margin-left: 10px;
+      display: none;
+    }
 
-  .botoes2 {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
+    /* === ResistenciaCraft === */
+    .servidor-resistencia {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-  .btn2 {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-  }
+    .servidor-resistencia img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      margin-right: 20px;
+      object-fit: cover;
+    }
 
-  .btn2.link {
-    background-color: #ff00f2;
-    color: white;
-  }
+    .servidor-resistencia-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
 
-  .btn2.link:hover {
-    background-color: #ff00f263;
-  }
+    .servidor-resistencia-info h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: #ffa500;
+    }
 
-  .btn2.copiar {
-    background-color: #0066cc;
-    color: white;
-  }
+    .servidor-resistencia-info p {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: #ccc;
+    }
 
-  .btn2.copiar:hover {
-    background-color: #004c99;
-  }
+    .botoes-resistencia {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-  .copiado-msg2 {
-    font-size: 0.9rem;
-    color: #f39c12;
-    margin-left: 10px;
-    display: none;
-  }
-</style>
+    .btn-resistencia {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
 
+    .btn-resistencia.link {
+      background-color: #ff6600;
+      color: white;
+    }
+
+    .btn-resistencia.link:hover {
+      background-color: #e65c00;
+    }
+
+    .btn-resistencia.copiar {
+      background-color: #0066cc;
+      color: white;
+    }
+
+    .btn-resistencia.copiar:hover {
+      background-color: #004c99;
+    }
+
+    .copiado-msg-resistencia {
+      font-size: 0.9rem;
+      color: #f39c12;
+      margin-left: 10px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -191,16 +230,10 @@
 
   <!-- Seção de Servidores -->
   <div class="servidores-container">
-    <div class="servidor">
-      <img src="img/icon.png" alt="Servidor 1" />
-      <div class="servidor-info">
-        <h2>Servidor Principal (MANUTENÇÃO)</h2>
-        <p>⦿ Em breve</p>
-      </div>
-    </div>
 
+    <!-- Servidor Realm -->
     <div class="servidor2">
-      <img src="img/realm.avif" alt="Servidor 2" />
+      <img src="img/realm.avif" alt="Servidor Realm" />
       <div class="servidor2-info">
         <h2>Servidor Realm (Bedrock)</h2>
         <p>⦿ Disponível</p>
@@ -211,6 +244,21 @@
         </div>
       </div>
     </div>
+
+    <!-- Servidor ResistenciaCraft -->
+    <div class="servidor-resistencia">
+      <img src="img/icon.png" alt="Servidor Resistencia" />
+      <div class="servidor-resistencia-info">
+        <h2>ResistênciaCraft (Versão de teste)</h2>
+        <p>⦿ Disponível</p>
+        <div class="botoes-resistencia">
+          <a href="minecraft://?addExternalServer=ResistênciaCraft|147.185.221.29:9764" class="btn-resistencia link">Entrar Agora</a>
+          <button class="btn-resistencia copiar" onclick="copiarTexto('147.185.221.29:9764', this)">Copiar Código</button>
+          <span class="copiado-msg-resistencia">Copiado!</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="js/include-barra.js"></script>
