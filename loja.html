@@ -284,7 +284,30 @@
   width: 20px;
   height: 20px;
 }
+  .preco-badge {
+    display: inline-block;
+    background-color: #4CAF50; /* verde suave */
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 6px 12px;
+    margin-top: 8px;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+  }
 
+  .preco-badge:hover {
+    background-color: #45a049;
+  }
+
+  .produto h3 {
+    margin-bottom: 6px;
+  }
+
+  .produto {
+    text-align: center;
+  }
 </style>  
 </head>
 <body>
@@ -296,43 +319,46 @@
     </nav>
   </header>
 
-  <!-- Produtos Premium (pacote completo) -->
-  <div class="produtos-premium">
-    <h2>Produtos Premium</h2>
-    <div class="produtos-grid">
-      <div class="produto" onclick="abrirModal('espada')">
-        <img src="img/espadadima.gift" alt="Espada Dima" class="imagem-produto" />
-        <h3>Espada</h3>
-      </div>
-      <div class="produto" onclick="abrirModal('picareta')">
-        <img src="img/picaretadima.gift" alt="Picareta Dima" class="imagem-produto" />
-        <h3>Picareta</h3>
-      </div>
-      <div class="produto" onclick="abrirModal('machado')">
-        <img src="img/machadodima.gift" alt="Machado Dima" class="imagem-produto" />
-        <h3>Machado</h3>
-      </div>
-      <div class="produto" onclick="abrirModal('pa')">
-        <img src="img/padima.gift" alt="Pá Dima" class="imagem-produto" />
-        <h3>Pá</h3>
-      </div>
+<!-- Produtos Premium (pacote completo) -->
+<div class="produtos-premium">
+  <h2>Produtos Premium</h2>
+  <p><span class="preco-badge">🛒 Kit Completo: 🛒 R$1,00</span></p>
+  <div class="produtos-grid">
+    <div class="produto" onclick="abrirModal('espada')">
+      <img src="img/espadadima.gift" alt="Espada Dima" class="imagem-produto" />
+      <h3>Espada</h3>
+    </div>
+    <div class="produto" onclick="abrirModal('picareta')">
+      <img src="img/picaretadima.gift" alt="Picareta Dima" class="imagem-produto" />
+      <h3>Picareta</h3>
+    </div>
+    <div class="produto" onclick="abrirModal('machado')">
+      <img src="img/machadodima.gift" alt="Machado Dima" class="imagem-produto" />
+      <h3>Machado</h3>
+    </div>
+    <div class="produto" onclick="abrirModal('pa')">
+      <img src="img/padima.gift" alt="Pá Dima" class="imagem-produto" />
+      <h3>Pá</h3>
     </div>
   </div>
+</div>
 
-  <!-- Produtos Avulsos (compras separadas) -->
-  <div class="produtos-extras">
-    <h2>Produtos</h2>
-    <div class="produtos-grid">
-      <div class="produto" onclick="abrirModal('picareta-seda')">
-        <img src="img/picaretadima.gift" alt="Picareta Toque de Seda" class="imagem-produto" />
-        <h3>Picareta</h3>
-      </div>
-      <div class="produto" onclick="abrirModal('teste')">
-        <img src="img/fly.png" alt="" class="imagem-produto" />
-        <h3>Não disponível</h3>
-      </div>
+<!-- Produtos Avulsos (compras separadas) -->
+<div class="produtos-extras">
+  <h2>Produtos Avulsos</h2>
+  <div class="produtos-grid">
+    <div class="produto" onclick="abrirModal('picareta-seda')">
+      <img src="img/picaretadima.gift" alt="Picareta Toque de Seda" class="imagem-produto" />
+      <h3>Picareta</h3>
+      <span class="preco-badge">🛒 R$2,00</span>
+    </div>
+    <div class="produto" onclick="abrirModal('teste')">
+      <img src="img/fly.png" alt="Voar" class="imagem-produto" />
+      <h3>Voar</h3>
+      <span class="preco-badge">Indisponivel</span>
     </div>
   </div>
+</div>
 
 <!-- Modal -->
 <div class="modal" id="modal">
