@@ -4,89 +4,288 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Loja de Minecraft - Em Breve!</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-    body {
-      margin: 0;
-      font-family: 'Press Start 2P', cursive;
-      background: url('https://i.imgur.com/rI2Jj8p.png') repeat;
-      color: #fff;
-      text-align: center;
-    }
+  body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: #000; /* Mudando o fundo da página para preto */
+    color: #0eefff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-    header {
-      background: #2d2d2d;
-      padding: 20px;
-      border-bottom: 5px solid #00ff00;
-    }
+  header {
+    background: #2d2d2d;
+    padding: 20px;
+    border-bottom: 5px solid #00ff00;
+  }
 
+  header h1 {
+    color: #00ff00;
+    text-shadow: 2px 2px #000;
+    margin: 0;
+  }
+
+  nav {
+    margin: 20px 0;
+  }
+
+  nav a {
+    color: #ffffff;
+    background-color: #444;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid #00ff00;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #00ff00;
+    color: #000;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 4px solid #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+    margin-top: 40px;
+    flex-grow: 1; /* Garante que o conteúdo ocupe o espaço disponível */
+  }
+
+  .minecraft-icon {
+    width: 100px;
+    margin-top: 20px;
+    transition: transform 0.5s;
+  }
+
+  .minecraft-icon:hover {
+    transform: scale(1.2) rotate(5deg);
+  }
+
+  .produtos-premium {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 4px solid #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+  }
+
+  .produtos-premium h2 {
+    color: #ffee00;
+  }
+
+  .produtos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .produto {
+    background-color: #222;
+    padding: 10px;
+    border: 2px solid #00ff00;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+
+  .produto:hover {
+    transform: scale(1.05);
+  }
+
+  .imagem-produto {
+    width: 40%;
+    height: auto;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Modal para mostrar os encantamentos */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+  }
+
+  .modal-content {
+    background-color: #333;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .modal-content img {
+    width: 40%;
+  }
+
+  .modal-content .descricao {
+    max-width: 50%;
+    text-align: left;
+  }
+
+  .modal-content h3 {
+    color: #ffee00;
+  }
+
+  .modal-content .encantamentos {
+    margin-top: 20px;
+  }
+
+  .modal-content .encantamentos div {
+    margin-bottom: 10px;
+  }
+
+  /* Botão Fechar Verde */
+  .modal-content .fechar {
+    background-color: #00ff00; /* Cor do botão de fechar em verde */
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Media Queries para Mobile */
+  @media screen and (max-width: 768px) {
     header h1 {
-      color: #00ff00;
-      text-shadow: 2px 2px #000;
-      margin: 0;
-    }
-
-    nav {
-      margin: 20px 0;
+      font-size: 24px;
     }
 
     nav a {
-      color: #ffffff;
-      background-color: #444;
-      padding: 10px 20px;
-      margin: 5px;
-      display: inline-block;
-      text-decoration: none;
-      border: 2px solid #00ff00;
-      transition: 0.3s;
+      padding: 8px 15px;
     }
 
-    nav a:hover {
-      background-color: #00ff00;
-      color: #000;
+    .produtos-grid {
+      flex-direction: column;
+      gap: 15px;
     }
 
-    .container {
-      max-width: 900px;
+    .produto {
+      width: 80%;
       margin: 0 auto;
-      padding: 40px 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border: 4px solid #00ff00;
-      box-shadow: 0 0 20px #00ff00;
-      margin-top: 40px;
     }
 
-    .status {
-      font-size: 18px;
-      color: #ff4444;
-      margin: 20px 0;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    .minecraft-icon {
-      width: 100px;
-      margin-top: 20px;
-      transition: transform 0.5s;
-    }
-
-    .minecraft-icon:hover {
-      transform: scale(1.2) rotate(5deg);
-    }
-
-    footer {
-      margin-top: 50px;
+    .modal-content {
+      flex-direction: column;
+      align-items: center;
+      max-width: 90%;
       padding: 20px;
-      background-color: #111;
-      color: #aaa;
+    }
+
+    .modal-content img {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .modal-content .descricao {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .modal-content .encantamentos div {
+      font-size: 14px;
+    }
+
+    .modal-content .fechar {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .produtos-premium h2 {
+      font-size: 20px;
+    }
+
+    .produto {
+      width: 90%;
+    }
+
+    .modal-content img {
+      width: 80%;
+    }
+
+    .modal-content .descricao {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .modal-content .encantamentos div {
       font-size: 12px;
     }
-  </style>
+
+    .modal-content .fechar {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /* Footer com fundo preto e texto branco */
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px; /* Garante que o footer fique no final da página */
+  }
+  .discord-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #5865F2;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.discord-button:hover {
+  background-color: #4752C4;
+}
+
+.discord-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+</style>  
 </head>
 <body>
   <header>
@@ -94,41 +293,140 @@
     <nav>
       <a href="index.html#">Início</a>
       <a href="#">Produtos</a>
-      <a href="#">Sobre</a>
-      <a href="#">Contato</a>
     </nav>
   </header>
 
-  <div class="container">
-    <h2>Em breve...</h2>
-    <p class="status">Ainda não estamos vendendo nada, mas prepare-se para grandes aventuras!</p>
-    <img class="minecraft-icon" src="https://www.minecraft.net/content/dam/minecraft/pmp/minecraft_logo.png" alt="Minecraft Logo">
+  <!-- Produtos Premium (pacote completo) -->
+  <div class="produtos-premium">
+    <h2>Produtos Premium</h2>
+    <div class="produtos-grid">
+      <div class="produto" onclick="abrirModal('espada')">
+        <img src="img/espadadima.gift" alt="Espada Dima" class="imagem-produto" />
+        <h3>Espada</h3>
+      </div>
+      <div class="produto" onclick="abrirModal('picareta')">
+        <img src="img/picaretadima.gift" alt="Picareta Dima" class="imagem-produto" />
+        <h3>Picareta</h3>
+      </div>
+      <div class="produto" onclick="abrirModal('machado')">
+        <img src="img/machadodima.gift" alt="Machado Dima" class="imagem-produto" />
+        <h3>Machado</h3>
+      </div>
+      <div class="produto" onclick="abrirModal('pa')">
+        <img src="img/padima.gift" alt="Pá Dima" class="imagem-produto" />
+        <h3>Pá</h3>
+      </div>
+    </div>
   </div>
 
+  <!-- Produtos Avulsos (compras separadas) -->
+  <div class="produtos-extras">
+    <h2>Produtos</h2>
+    <div class="produtos-grid">
+      <div class="produto" onclick="abrirModal('picareta-seda')">
+        <img src="img/picaretadima.gift" alt="Picareta Toque de Seda" class="imagem-produto" />
+        <h3>Picareta</h3>
+      </div>
+      <div class="produto" onclick="abrirModal('teste')">
+        <img src="img/fly.png" alt="" class="imagem-produto" />
+        <h3>Não disponível</h3>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="descricao">
+      <h3 id="modal-titulo">Produto Premium</h3>
+      <p id="modal-mensagem">Aqui vão os encantamentos e informações do produto.</p>
+      <div class="encantamentos" id="modal-encantamentos"></div>
+    </div>
+    <img id="modal-imagem" src="" alt="Imagem do Produto" />
+
+    <!-- Botão de Comprar no Discord -->
+    <a href="https://discord.gg/PqBkAtqDNn" target="_blank" class="discord-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 245 240" fill="white">
+        <path d="M104.4 104.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zm36.2 0c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
+        <path d="M189.5 20h-134C42.8 20 30 32.9 30 48.6v142.8c0 15.7 12.8 28.6 28.5 28.6h113.4l-5.3-18.4 12.8 11.9 12.1 11.1 21.4 18.8V48.6c0-15.7-12.8-28.6-28.4-28.6zm-39.8 138s-3.7-4.4-6.8-8.2c13.6-3.9 18.7-12.5 18.7-12.5-4.2 2.7-8.2 4.6-11.8 5.9-5.1 2.1-10 3.5-14.8 4.3-9.8 1.8-18.8 1.3-26.6-.1-5.9-1.1-11-2.7-15.2-4.3-2.4-.9-5-2-7.6-3.3-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s5 8.3 18.2 12.4c-3.1 3.9-6.9 8.5-6.9 8.5-22.8-.7-31.4-15.7-31.4-15.7 0-33.2 14.9-60.2 14.9-60.2 14.9-11 29.1-10.7 29.1-10.7l1 1.2c-18.7 5.4-27.4 13.5-27.4 13.5s2.3-1.3 6.2-3c11.3-5 20.3-6.4 24-6.7.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.2 9.6 0 0-8.2-7.8-25.9-13l1.4-1.6s14.2-.3 29.1 10.7c0 0 14.9 27 14.9 60.2 0 .1-8.6 15-31.5 15.7z"/>
+      </svg>
+      Comprar no Discord
+    </a>
+
+    <div class="fechar" onclick="fecharModal()">Fechar</div>
+  </div>
+</div>
+
+
   <footer>
-    &copy; 2025 Loja de Minecraft. Não afiliado à Mojang ou Microsoft.
+    © 2025 Loja de ResistênciaCraft. Não afiliado à Mojang ou Microsoft.
   </footer>
 
   <script>
-    // Script de boas-vindas animado
-    document.addEventListener('DOMContentLoaded', function() {
-      const titulo = document.querySelector('h2');
-      let textoOriginal = titulo.textContent;
-      let i = 0;
+    function abrirModal(produto) {
+      const modal = document.getElementById('modal');
+      const titulo = document.getElementById('modal-titulo');
+      const mensagem = document.getElementById('modal-mensagem');
+      const encantamentos = document.getElementById('modal-encantamentos');
+      const imagem = document.getElementById('modal-imagem');
 
-      function digitarTexto() {
-        if (i <= textoOriginal.length) {
-          titulo.textContent = textoOriginal.substring(0, i) + "_";
-          i++;
-          setTimeout(digitarTexto, 100);
-        } else {
-          titulo.textContent = textoOriginal;
-        }
+      let dados = {};
+
+      if (produto === 'espada') {
+        dados = {
+          titulo: 'Espada Dima',
+          imagem: 'img/espadadima.gift',
+          mensagem: 'Espada Indestrutível',
+          encantamentos: ['Afiação V', 'Aspecto de Fogo II', 'Pilhagem IV', 'Indestrutível']
+        };
+      } else if (produto === 'picareta') {
+        dados = {
+          titulo: 'Picareta Dima',
+          imagem: 'img/picaretadima.gift',
+          mensagem: 'Ideal para minerar rapidamente e obter recursos raros.',
+          encantamentos: ['Eficiência 100', 'Fortuna IV', 'Indestrutível']
+        };
+      } else if (produto === 'machado') {
+        dados = {
+          titulo: 'Machado Dima',
+          imagem: 'img/machadodima.gift',
+          mensagem: 'Perfeito para quebrar árvores e batalhas contra mobs!',
+          encantamentos: ['Afiação V', 'Eficiência 100', 'Fortuna IV', 'Indestrutível']
+        };
+      } else if (produto === 'pa') {
+        dados = {
+          titulo: 'Pá Dima',
+          imagem: 'img/padima.gift',
+          mensagem: 'Pá ideal para escavar rapidamente terrenos e coletar areia e terra.',
+          encantamentos: ['Eficiência 100', 'Fortuna IV', 'Indestrutível']
+        };
+      } else if (produto === 'picareta-seda') {
+        dados = {
+          titulo: 'Picareta Toque de Seda',
+          imagem: 'img/picaretadima.gift',
+          mensagem: 'Picareta especial para minerar blocos delicados sem quebrá-los.',
+          encantamentos: ['Toque de Seda I', 'Eficiência 100', 'Indestrutível']
+        };
+              } else if (produto === 'teste') {
+        dados = {
+          titulo: 'Voar infinitamente',
+          imagem: 'img/fly.png',
+          mensagem: 'Voar infinitamente em dias não guerra.',
+          encantamentos: ['Fly']
+        };
       }
 
-      titulo.textContent = "";
-      digitarTexto();
-    });
+      titulo.textContent = dados.titulo;
+      mensagem.textContent = dados.mensagem;
+      imagem.src = dados.imagem;
+      encantamentos.innerHTML = dados.encantamentos.map(encantamento => `<div>${encantamento}</div>`).join('');
+
+      modal.style.display = 'flex';
+    }
+
+    function fecharModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
   </script>
 </body>
 </html>
