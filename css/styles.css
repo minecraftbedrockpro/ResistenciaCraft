@@ -1,3 +1,280 @@
+body.regras, body.servidores, body.equipe, body.discord {
+  background: #000 url('../img/fundo.png') repeat center center fixed !important;
+  background-size: cover !important;
+}
+@media (max-width: 600px) {
+  .site-container {
+    padding: 0 1vw 18px 1vw;
+  }
+  .bloco-bemvindo {
+    margin-top: 54px;
+    padding: 0.5rem 0.1rem;
+    max-width: 99vw;
+    border-radius: 6px;
+    border-width: 1px;
+  }
+  .bloco-categoria {
+    max-width: 99vw;
+    padding: 4px 1vw 2px 1vw;
+    margin-top: 6px;
+    border-radius: 6px;
+    border-width: 1px;
+  }
+  .titulo-categoria {
+    font-size: 0.93rem;
+    margin-bottom: 4px;
+  }
+  .bloco-atualizacao {
+    flex-direction: column;
+    gap: 3px;
+    padding: 3px 1vw;
+    border-radius: 4px;
+    border-width: 1px;
+  }
+  .img-atualizacao {
+    width: 32px;
+    height: 18px;
+    margin-bottom: 1px;
+    border-radius: 3px;
+  }
+  .conteudo-atualizacao h3 {
+    font-size: 0.85rem;
+  }
+  .conteudo-atualizacao p {
+    font-size: 0.78rem;
+  }
+  .novidades-grid {
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 1px;
+  }
+  .novidade-card {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 2px 0 1px 0;
+    gap: 2px;
+    border-radius: 4px;
+    border-width: 1px;
+  }
+  .novidade-card img {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+  }
+  .novidade-card h4 {
+    font-size: 0.85rem;
+  }
+  .novidade-card p {
+    font-size: 0.75rem;
+  }
+}
+/* Blocos de categoria e novidades para index */
+/* Remover visual customizado de scrollbar no mobile */
+@media (max-width: 600px) {
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar-thumb,
+  ::-webkit-scrollbar-track {
+    display: none !important;
+    background: transparent !important;
+  }
+  html, body {
+    scrollbar-width: auto !important;
+    -ms-overflow-style: auto !important;
+  }
+}
+.bloco-categoria {
+  width: 100%;
+  background: #181818;
+  max-width: 900px;
+  border-radius: 12px;
+  margin: 32px auto 0 auto;
+  padding: 2vw 2vw 1.5vw 2vw;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.titulo-categoria {
+  font-size: 1.6rem;
+  color: #ffa500;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: bold;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.barra-laranja {
+  display: inline-block;
+  width: 32px;
+  height: 4px;
+  background: #ffa500;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.bloco-atualizacao {
+  width: 100%;
+  background: #232323;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.bloco-bemvindo {
+  width: 100%;
+  max-width: 600px;
+  background-color: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  margin-top: 90px; /* espaço para barra fixa */
+  padding: 2vw 2vw 2vw 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+}
+.img-atualizacao {
+  width: 110px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #111;
+}
+.conteudo-atualizacao h3 {
+  margin: 0 0 8px 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.conteudo-atualizacao .data-atualizacao {
+  color: #ffa500;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  .bloco-bemvindo {
+    padding: 2vw 2vw 2vw 2vw;
+    max-width: 99vw;
+    border-radius: 8px;
+    border-width: 1px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bloco-categoria {
+    padding: 2vw 2vw 1.5vw 2vw;
+    margin-top: 6px;
+    border-radius: 8px;
+    border-width: 1px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  display: block;
+}
+.conteudo-atualizacao p {
+  color: #ccc;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.novidades-grid {
+  width: 100%;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.novidade-card {
+  background: #232323;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+  padding: 14px 14px 10px 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 260px;
+}
+.novidade-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #111;
+}
+.novidade-card h4 {
+  margin: 0 0 4px 0;
+  color: #ffa500;
+  font-size: 1.1rem;
+}
+.novidade-card .data-atualizacao {
+  color: #e53935;
+  font-size: 0.92rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+}
+.novidade-card p {
+  color: #ccc;
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 900px) {
+  .bloco-atualizacao {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .img-atualizacao {
+    width: 100%;
+    height: 120px;
+    max-width: 350px;
+  }
+  .novidades-grid {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .novidade-card {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
+/* Container centralizador para todo o site */
+.site-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 48px 16px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ajuste para o main centralizado e responsivo */
+.inicio-main {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-family: monospace, monospace;
+  box-sizing: border-box;
+}
 /* Ajustes para a página inicial (index) */
 
 .inicio-main {
@@ -43,7 +320,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #000; /* fundo preto */
+  background: #000 url('../img/fundo.png') repeat center center fixed;
+  background-size: cover;
   overflow-x: hidden; /* evita barra horizontal */
   height: 100%;
   width: 100%;
@@ -98,6 +376,7 @@ html, body {
   background-color: #111;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  margin-top: 90px; /* espaço para barra fixa */
 }
 
 .bloco-bemvindo h1 {
