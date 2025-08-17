@@ -8,7 +8,8 @@
   <style>
     body {
       margin: 0;
-      background-color: #000;
+      background: #000 url('img/fundo.png') repeat center center fixed;
+      background-size: cover;
       font-family: Arial, sans-serif;
       color: white;
     }
@@ -223,7 +224,7 @@
     }
   </style>
 </head>
-<body>
+<body class="servidores">
 
   <!-- Barra será carregada dinamicamente -->
   <div id="barra-container"></div>
@@ -231,30 +232,31 @@
   <!-- Seção de Servidores -->
   <div class="servidores-container">
 
-    <!-- Servidor Realm -->
-    <div class="servidor2">
-      <img src="img/realm.avif" alt="Servidor Realm" />
-      <div class="servidor2-info">
-        <h2>Servidor Realm (Bedrock)</h2>
+    <!-- Servidor ResistenciaCraft (primeiro) -->
+    <div class="servidor-resistencia">
+      <img src="img/icon.png" alt="Servidor Resistencia" />
+      <div class="servidor-resistencia-info">
+        <h2>
+          <span style="color:#e53935;">Resistência</span><span style="color:#ffa500;">Craft</span>
+          <span style="font-size:1rem; color:#fff; font-weight:normal;"> &ndash; Realm Bedrock</span>
+        </h2>
         <p>⦿ Disponível</p>
-        <div class="botoes2">
-          <a href="minecraft://acceptRealmInvite?inviteID=4GAEJkR4ZghE5Yc" target="_blank" class="btn2 link">Entrar Agora</a>
-          <button class="btn2 copiar" onclick="copiarTexto('4GAEJkR4ZghE5Yc', this)">Copiar Código</button>
-          <span class="copiado-msg2">Copiado!</span>
+        <div class="botoes-resistencia">
+          <a href="minecraft://?addExternalServer=ResistênciaCraft|147.185.221.29:9764" class="btn-resistencia link" style="text-decoration:none;">Entrar Agora</a>
+          <button class="btn-resistencia copiar" onclick="copiarTexto('147.185.221.29:9764', this)">Copiar Código</button>
+          <span class="copiado-msg-resistencia">Copiado!</span>
         </div>
       </div>
     </div>
 
-    <!-- Servidor ResistenciaCraft -->
-    <div class="servidor-resistencia">
-      <img src="img/icon.png" alt="Servidor Resistencia" />
-      <div class="servidor-resistencia-info">
-        <h2>ResistênciaCraft (Versão de teste)</h2>
-        <p>⦿ Disponível</p>
-        <div class="botoes-resistencia">
-          <a href="minecraft://?addExternalServer=ResistênciaCraft|147.185.221.29:9764" class="btn-resistencia link">Entrar Agora</a>
-          <button class="btn-resistencia copiar" onclick="copiarTexto('147.185.221.29:9764', this)">Copiar Código</button>
-          <span class="copiado-msg-resistencia">Copiado!</span>
+    <!-- Servidor Java & Bedrock (antigo Realm) -->
+    <div class="servidor2">
+      <img src="img/desconhecido.png" alt="Server Java & Bedrock" />
+      <div class="servidor2-info">
+        <h2>Server Java &amp; Bedrock</h2>
+        <p>⦿ Nunca</p>
+        <div class="botoes2">
+          <span style="color:#888; font-size:0.95rem;">Aguarde novidades!</span>
         </div>
       </div>
     </div>
