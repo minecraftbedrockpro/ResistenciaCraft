@@ -371,12 +371,30 @@ html, body {
 }
 
 .bloco-bemvindo {
+/* Bloco bem-vindo responsivo */
+.bloco-bemvindo {
   max-width: 600px;
-  padding: 2rem;
+  width: 100%;
+  padding: 2rem 1rem;
   background-color: #111;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
   margin-top: 90px; /* espaço para barra fixa */
+  box-sizing: border-box;
+  word-break: break-word;
+}
+@media (max-width: 600px) {
+  .bloco-bemvindo {
+    max-width: 98vw;
+    padding: 1.1rem 2vw;
+    font-size: 1rem;
+    margin-top: 70px;
+  }
+  .bloco-bemvindo h1, .bloco-bemvindo h2 {
+    font-size: 2rem;
+    word-break: break-word;
+  }
+}
 }
 
 .bloco-bemvindo h1 {
