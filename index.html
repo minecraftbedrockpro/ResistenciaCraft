@@ -2,10 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="img/icon.png" />
   <title>Resistência Craft</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/barra.css" />
+  <style>
+    body, .site-container, .bloco-bemvindo, .bloco-categoria, .bloco-atualizacao, .novidades-grid, .novidade-card, .conteudo-atualizacao {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      -ms-user-select: none !important;
+      -moz-user-select: none !important;
+    }
+    img {
+      pointer-events: none !important;
+      -webkit-user-drag: none !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,7 +27,7 @@
 
 
 
-<div class="site-container">
+<div class="site-container" oncopy="return false" oncut="return false" oncontextmenu="return false" onselectstart="return false">
   <!-- Bloco de boas-vindas no topo -->
   <section class="bloco-bemvindo bloco-topo">
     <h1>Bem-vindo ao <span style="color:#e53935;">Resistência</span><span style="color:#ffa500;">Craft</span></h1>
@@ -26,11 +39,11 @@
   <section class="bloco-categoria">
     <h2 class="titulo-categoria"><span class="barra-laranja"></span> Últimas Atualizações:</h2>
     <div class="bloco-atualizacao">
-      <img src="img/icon.png" alt="Abertura ResistênciaCraft" class="img-atualizacao" />
+      <img src="img/lojalog.PNG" alt="Abertura da Loja" class="img-atualizacao" />
       <div class="conteudo-atualizacao">
-        <h3>❤ ResistênciaCraft Abertura!</h3>
-        <span class="data-atualizacao">17 de agosto de 2025</span>
-        <p>O servidor está oficialmente aberto! Explore, jogue, participe dos eventos e aproveite todas as novidades da nossa comunidade.</p>
+        <h3>🛒 Loja Oficial Aberta!</h3>
+        <span class="data-atualizacao">19 de agosto de 2025</span>
+        <p>A loja do ResistênciaCraft está oficialmente aberta! Agora você pode adquirir kits e itens exclusivos para turbinar sua aventura no servidor.</p>
       </div>
     </div>
   </section>
@@ -94,5 +107,15 @@
 
   <script src="js/include-barra.js"></script>
   <script src="js/index.js"></script>
+  <script>
+    // Bloqueia copiar, colar, arrastar e selecionar
+    document.addEventListener('copy', function(e) { e.preventDefault(); });
+    document.addEventListener('cut', function(e) { e.preventDefault(); });
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+    document.querySelectorAll('img').forEach(function(img){
+      img.setAttribute('draggable', 'false');
+    });
+  </script>
 </body>
 </html>
