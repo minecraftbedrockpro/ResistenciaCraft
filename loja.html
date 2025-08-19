@@ -1,421 +1,435 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="img/icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Loja - ResistênciaCraft</title>
-  <style>
-    body, .site-container, .loja-vazia, .bloco-categoria, .produtos-kit, .produto-kit, .categoria-header, .enchants-box, .enchant-item, #modal-produto, #aviso-discord {
-      user-select: none !important;
-      -webkit-user-select: none !important;
-      -ms-user-select: none !important;
-      -moz-user-select: none !important;
-    }
-    img {
-      pointer-events: none !important;
-      -webkit-user-drag: none !important;
-    }
-  </style>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/barra.css" />
-  <link rel="stylesheet" href="css/loja-mobile.css" />
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="img/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loja - ResistênciaCraft</title>
+  <style>
+    body, .site-container, .loja-vazia, .bloco-categoria, .produtos-kit, .produto-kit, .categoria-header, .enchants-box, .enchant-item, #modal-produto, #aviso-discord {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      -ms-user-select: none !important;
+      -moz-user-select: none !important;
+    }
+    img {
+      pointer-events: none !important;
+      -webkit-user-drag: none !important;
+    }
+  </style>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/barra.css" />
+  <link rel="stylesheet" href="css/loja-mobile.css" />
 </head>
 <body>
-    <div id="barra-container"></div>
+  <!-- Barra será carregada dinamicamente -->
+  <div id="barra-container"></div>
 
-  <div class="site-container" oncopy="return false" oncut="return false" oncontextmenu="return false" onselectstart="return false">
-            <div class="loja-vazia" style="text-align:center;padding:48px 0;color:#aaa;font-size:1.2rem;">
-            <div class="bloco-categoria">
-        <div class="bloco-categoria-topo">
-          <div class="categoria-header">
-            <img src="img/Magma_Cube.png" alt="Magma Cube">
-            <span>Kit Magna Essência</span>
-            <span class="preco-mobile">R$1,00 BR</span>
-            <a href="#" class="btn-comprar-kit" onclick="mostrarAvisoDiscord(event)" data-discord-link="https://discord.gg/xXxEzWH9wc">Comprar Kit</a>
-          </div>
-        </div>
-        <div class="produtos-kit">
-                    <div class="produto-kit" data-produto="espadadima" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/espadadima.gift" alt="Espada de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Espada de Diamante</div>
-            <div style="color:#ccc;font-size:0.98rem;">Uma espada poderosa feita de diamante.</div>
-          </div>
-                    <div class="produto-kit" data-produto="picaretadima" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/picaretadima.gift" alt="Picareta de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Picareta de Diamante</div>
-            <div style="color:#ccc;font-size:0.98rem;">Picareta resistente para mineração avançada.</div>
-          </div>
-                    <div class="produto-kit" data-produto="machadodima" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/machadodima.gift" alt="Machado de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Machado de Diamante</div>
-            <div style="color:#ccc;font-size:0.98rem;">Machado afiado para cortar madeira rapidamente.</div>
-          </div>
-                    <div class="produto-kit" data-produto="padima" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/padima.gift" alt="Pá de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Pá de Diamante</div>
-            <div style="color:#ccc;font-size:0.98rem;">Pá ultra resistente para escavação rápida.</div>
-          </div>
-        </div>
-      </div>
-            <div class="bloco-categoria">
-        <div class="bloco-categoria-topo">
-          <div class="categoria-header">
-            <img src="img/Magma_Cube_SUPER.png" alt="Magma Cube">
-            <span>Kit Magna Soberano</span>
-            <span class="preco-mobile">R$2,00 BR</span>
-            <a href="#" class="btn-comprar-kit" onclick="mostrarAvisoDiscord(event)" data-discord-link="https://discord.gg/AWc22sPmNm">Comprar Kit</a>
-          </div>
-        </div>
-        <div class="produtos-kit">
-                    <div class="produto-kit" data-produto="espadadima_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/espadadima.gift" alt="Espada de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Espada de Diamante</div>
-          </div>
-                    <div class="produto-kit" data-produto="picaretadima_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/picaretadima.gift" alt="Picareta de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Picareta de Diamante</div>
-          </div>
-                    <div class="produto-kit" data-produto="machadodima_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/machadodima.gift" alt="Machado de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Machado de Diamante</div>
-          </div>
-                    <div class="produto-kit" data-produto="padima_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/padima.gift" alt="Pá de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Pá de Diamante</div>
-          </div>
-                    <div class="produto-kit" data-produto="helmet_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/Diamond_Helmet.png" alt="Capacete de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Capacete de Diamante</div>
-          </div>
-                    <div class="produto-kit" data-produto="chestplate_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/Diamond_Chestplate.png" alt="Peitoral de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Peitoral de Diamante</div>
-          </div>
-                    <div class="produto-kit" data-produto="leggings_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/Diamond_Leggings.png" alt="Calça de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Calça de Diamante</div>
-          </div>
-                    <div class="produto-kit" data-produto="boots_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
-            <img src="img/Diamond_Boots.png" alt="Botas de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
-            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Botas de Diamante</div>
-          </div>
-        </div>
-      </div>
-      <p>Mais nenhum produto encontrado.<br>Esse espaço será usado para produtos de compras unicas!</p>
-    </div>
-  </div>
+  <div class="site-container" oncopy="return false" oncut="return false" oncontextmenu="return false" onselectstart="return false">
+    <!-- Bloco de boas-vindas removido -->
 
-  <div id="footer-container"></div>
-    <div id="aviso-discord-bg" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10001;justify-content:center;align-items:center;background:rgba(0,0,0,0.2);">
-    <div id="aviso-discord" style="background:#232a3a;border-radius:12px;padding:18px 22px;box-shadow:0 2px 12px #0006;color:#fff;max-width:320px;text-align:center;display:flex;flex-direction:column;align-items:center;">
-      <span style="font-size:1.08rem;font-weight:bold;margin-bottom:8px;">Atenção!</span>
-      <span style="font-size:0.98rem;margin-bottom:14px;">Este botão enviará você para o Discord do ResistênciaCraft para prosseguir com a compra!</span>
-      <a href="#" target="_blank" id="btn-ir-discord" style="background:#5865F2;color:#fff;padding:8px 18px;border-radius:8px;font-weight:bold;text-decoration:none;box-shadow:0 2px 8px #0003;">Ir para o Discord</a>
-      <button onclick="fecharAvisoDiscord()" style="margin-top:12px;padding:6px 14px;background:#a00;border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:0.98rem;">Fechar</button>
-    </div>
-  </div>
-    <style>
-    #modal-produto-bg {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.75);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-    }
-    #modal-produto {
-      background: #121212;
-      border-radius: 16px;
-      padding: 20px;
-      width: 360px;
-      max-width: 95%;
-      box-shadow: 0 2px 15px #0008;
-      color: #fff;
-      animation: fadeIn .2s ease;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .produto-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 64px;
-      height: 64px;
-      background: #181818;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px #0004;
-      margin-bottom: 12px;
-    }
-    .produto-icon img {
-      width: 48px;
-      height: 48px;
-      display: block;
-    }
-    .enchants-box {
-      background: linear-gradient(90deg,#232a3a 0%,#1a222d 100%);
-      border-radius: 12px;
-      padding: 14px 10px 10px 10px;
-      box-shadow: 0 2px 8px #0003;
-      margin-top: 15px;
-    }
-    .enchant-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 8px 0 0 0;
-    }
-    .enchant-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #181818;
-      border-radius: 8px;
-      width: 32px;
-      height: 32px;
-      box-shadow: 0 2px 8px #0002;
-    }
-    .enchant-icon img {
-      width: 22px;
-      height: 22px;
-    }
-    .enchant-nome {
-      font-weight: bold;
-      color: #a7c7ff;
-      font-size: 1.08rem;
-    }
-    .enchant-nivel {
-      color: #fff;
-      font-size: 1.05rem;
-      margin-left: 4px;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(.95);}
-      to {opacity: 1; transform: scale(1);}
-    }
-    .modal-produto-fechar-btn {
-      margin-top:15px;
-      padding:8px 16px;
-      background:#a00;
-      border:none;
-      border-radius:8px;
-      color:#fff;
-      cursor:pointer;
-      font-size:1rem;
-    }
-  </style>
-  <div id="modal-produto-bg">
-    <div id="modal-produto">
-      <div id="modal-produto-img"></div>
-      <h2 id="modal-produto-titulo" style="margin-bottom:8px;text-align:center;font-size:1.22rem;font-weight:bold;"></h2>
-      <div id="modal-produto-info" style="display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:8px;"></div>
-      <p id="modal-produto-desc" style="margin-bottom:8px;text-align:center;color:#bbb;font-size:1.01rem;"></p>
-      <p id="modal-produto-preco" style="margin-bottom:8px;text-align:center;color:#ff5252;font-weight:bold;font-size:1.08rem;"></p>
-      <div id="modal-produto-enchants"></div>
-      <button onclick="fecharModalProduto()" class="modal-produto-fechar-btn">Fechar</button>
-    </div>
-  </div>
+    <!-- Adicione seus kits e produtos aqui -->
+    <div class="loja-vazia" style="text-align:center;padding:48px 0;color:#aaa;font-size:1.2rem;">
+      <!-- Estilos agora em css/loja-mobile.css -->
+      <div class="bloco-categoria">
+        <div class="bloco-categoria-topo">
+          <div class="categoria-header">
+            <img src="img/Magma_Cube.png" alt="Magma Cube">
+            <span>Kit Magna Básico</span>
+            <span class="preco-mobile">R$1,00 BR</span>
+            <a href="#" class="btn-comprar-kit" onclick="mostrarAvisoDiscord(event)">Comprar Kit</a>
+          </div>
+        </div>
+        <div class="produtos-kit">
+          <!-- Produto 1 exemplo -->
+          <div class="produto-kit" data-produto="espadadima" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/espadadima.gift" alt="Espada de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Espada de Diamante</div>
+            <div style="color:#ccc;font-size:0.98rem;">Uma espada poderosa feita de diamante.</div>
+          </div>
+          <!-- Produto 2 exemplo -->
+          <div class="produto-kit" data-produto="picaretadima" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/picaretadima.gift" alt="Picareta de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Picareta de Diamante</div>
+            <div style="color:#ccc;font-size:0.98rem;">Picareta resistente para mineração avançada.</div>
+          </div>
+          <!-- Produto 3 exemplo -->
+          <div class="produto-kit" data-produto="machadodima" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/machadodima.gift" alt="Machado de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Machado de Diamante</div>
+            <div style="color:#ccc;font-size:0.98rem;">Machado afiado para cortar madeira rapidamente.</div>
+          </div>
+          <!-- Produto 4: Pá de Diamante -->
+          <div class="produto-kit" data-produto="padima" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/padima.gift" alt="Pá de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Pá de Diamante</div>
+            <div style="color:#ccc;font-size:0.98rem;">Pá ultra resistente para escavação rápida.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Kit Magna Soberano -->
+      <div class="bloco-categoria">
+        <div class="bloco-categoria-topo">
+          <div class="categoria-header">
+            <img src="img/Magma_Cube_SUPER.png" alt="Magma Cube">
+            <span>Kit Magna Soberano</span>
+            <span class="preco-mobile">R$2,00 BR</span>
+            <a href="#" class="btn-comprar-kit" onclick="mostrarAvisoDiscord(event)">Comprar Kit</a>
+          </div>
+        </div>
+        <div class="produtos-kit">
+          <!-- Espada Soberano -->
+          <div class="produto-kit" data-produto="espadadima_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/espadadima.gift" alt="Espada de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Espada de Diamante</div>
+          </div>
+          <!-- Picareta Soberano -->
+          <div class="produto-kit" data-produto="picaretadima_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/picaretadima.gift" alt="Picareta de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Picareta de Diamante</div>
+          </div>
+          <!-- Machado Soberano -->
+          <div class="produto-kit" data-produto="machadodima_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/machadodima.gift" alt="Machado de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Machado de Diamante</div>
+          </div>
+          <!-- Pá Soberano -->
+          <div class="produto-kit" data-produto="padima_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/padima.gift" alt="Pá de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Pá de Diamante</div>
+          </div>
+          <!-- Capacete de Diamante -->
+          <div class="produto-kit" data-produto="helmet_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/Diamond_Helmet.png" alt="Capacete de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Capacete de Diamante</div>
+          </div>
+          <!-- Peitoral de Diamante -->
+          <div class="produto-kit" data-produto="chestplate_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/Diamond_Chestplate.png" alt="Peitoral de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Peitoral de Diamante</div>
+          </div>
+          <!-- Calça de Diamante -->
+          <div class="produto-kit" data-produto="leggings_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/Diamond_Leggings.png" alt="Calça de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Calça de Diamante</div>
+          </div>
+          <!-- Botas de Diamante -->
+          <div class="produto-kit" data-produto="boots_soberano" style="background:#181818;border-radius:12px;padding:12px 10px;width:180px;box-shadow:0 2px 8px #0002;cursor:pointer;transition:box-shadow 0.2s;">
+            <img src="img/Diamond_Boots.png" alt="Botas de Diamante" style="width:48px;height:48px;display:block;margin:0 auto 8px auto;">
+            <div style="font-weight:bold;color:#fff;font-size:1.08rem;">Botas de Diamante</div>
+          </div>
+        </div>
+      </div>
+      <p>Mais nenhum produto encontrado.<br>Esse espaço será usado para produtos de compras unicas!</p>
+    </div>
+  </div>
 
-  <script src="js/include-barra.js"></script>
-  <script src="js/include-footer.js"></script>
-  <script>
-    // Bloqueia copiar, colar, arrastar e selecionar
-    document.addEventListener('copy', function(e) { e.preventDefault(); });
-    document.addEventListener('cut', function(e) { e.preventDefault(); });
-    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-    document.addEventListener('selectstart', function(e) { e.preventDefault(); });
-    document.querySelectorAll('img').forEach(function(img){
-      img.setAttribute('draggable', 'false');
-    });
-  </script>
-  <script>
-    function mostrarAvisoDiscord(e) {
-      e.preventDefault();
-      const linkDoBotao = e.target.getAttribute('data-discord-link');
-      const botaoIrDiscord = document.getElementById('btn-ir-discord');
-      
-      // Atualiza o link do botão "Ir para o Discord"
-      botaoIrDiscord.href = linkDoBotao;
-      
-      document.getElementById('aviso-discord-bg').style.display = 'flex';
-    }
-    function fecharAvisoDiscord() {
-      document.getElementById('aviso-discord-bg').style.display = 'none';
-    }
-    // Fecha aviso ao clicar fora
-    document.getElementById('aviso-discord-bg').addEventListener('click', function(ev){
-      if(ev.target === this) fecharAvisoDiscord();
-    });
-  </script>
-  <script>
-    // Encantamentos dos produtos agora são carregados do JSON externo
-    let encantamentosProdutos = {};
-    fetch('loja/encantamentos.json')
-      .then(res => res.json())
-      .then(data => { encantamentosProdutos = data; });
+  <div id="footer-container"></div>
+  <!-- Menu flutuante pequeno para aviso do Discord -->
+  <div id="aviso-discord-bg" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10001;justify-content:center;align-items:center;background:rgba(0,0,0,0.2);">
+    <div id="aviso-discord" style="background:#232a3a;border-radius:12px;padding:18px 22px;box-shadow:0 2px 12px #0006;color:#fff;max-width:320px;text-align:center;display:flex;flex-direction:column;align-items:center;">
+      <span style="font-size:1.08rem;font-weight:bold;margin-bottom:8px;">Atenção!</span>
+      <span style="font-size:0.98rem;margin-bottom:14px;">Este botão enviará você para o Discord do ResistênciaCraft para prosseguir com a compra!</span>
+      <a href="https://discord.gg/AWc22sPmNm" target="_blank" style="background:#5865F2;color:#fff;padding:8px 18px;border-radius:8px;font-weight:bold;text-decoration:none;box-shadow:0 2px 8px #0003;">Ir para o Discord</a>
+      <button onclick="fecharAvisoDiscord()" style="margin-top:12px;padding:6px 14px;background:#a00;border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:0.98rem;">Fechar</button>
+    </div>
+  </div>
+  <!-- Modal flutuante de produto (novo estilo) -->
+  <style>
+    #modal-produto-bg {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    #modal-produto {
+      background: #121212;
+      border-radius: 16px;
+      padding: 20px;
+      width: 360px;
+      max-width: 95%;
+      box-shadow: 0 2px 15px #0008;
+      color: #fff;
+      animation: fadeIn .2s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .produto-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: #181818;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #0004;
+      margin-bottom: 12px;
+    }
+    .produto-icon img {
+      width: 48px;
+      height: 48px;
+      display: block;
+    }
+    .enchants-box {
+      background: linear-gradient(90deg,#232a3a 0%,#1a222d 100%);
+      border-radius: 12px;
+      padding: 14px 10px 10px 10px;
+      box-shadow: 0 2px 8px #0003;
+      margin-top: 15px;
+    }
+    .enchant-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px 0 0 0;
+    }
+    .enchant-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #181818;
+      border-radius: 8px;
+      width: 32px;
+      height: 32px;
+      box-shadow: 0 2px 8px #0002;
+    }
+    .enchant-icon img {
+      width: 22px;
+      height: 22px;
+    }
+    .enchant-nome {
+      font-weight: bold;
+      color: #a7c7ff;
+      font-size: 1.08rem;
+    }
+    .enchant-nivel {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-left: 4px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    .modal-produto-fechar-btn {
+      margin-top:15px;
+      padding:8px 16px;
+      background:#a00;
+      border:none;
+      border-radius:8px;
+      color:#fff;
+      cursor:pointer;
+      font-size:1rem;
+    }
+  </style>
+  <div id="modal-produto-bg">
+    <div id="modal-produto">
+      <div id="modal-produto-img"></div>
+      <h2 id="modal-produto-titulo" style="margin-bottom:8px;text-align:center;font-size:1.22rem;font-weight:bold;"></h2>
+      <div id="modal-produto-info" style="display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:8px;"></div>
+      <p id="modal-produto-desc" style="margin-bottom:8px;text-align:center;color:#bbb;font-size:1.01rem;"></p>
+      <p id="modal-produto-preco" style="margin-bottom:8px;text-align:center;color:#ff5252;font-weight:bold;font-size:1.08rem;"></p>
+      <div id="modal-produto-enchants"></div>
+      <button onclick="fecharModalProduto()" class="modal-produto-fechar-btn">Fechar</button>
+    </div>
+  </div>
 
-    // Dados dos produtos
-    const produtos = {
-      "espadadima": {
-        img: 'img/espadadima.gift',
-        titulo: 'Espada de Diamante',
-        desc: 'Uma espada poderosa feita de diamante.',
-        preco: 'R$1,00 BR',
-        link: '#'
-      },
-      "picaretadima": {
-        img: 'img/picaretadima.gift',
-        titulo: 'Picareta de Diamante',
-        desc: 'Picareta resistente para mineração avançada.',
-        preco: 'R$1,00 BR',
-        link: '#'
-      },
-      "machadodima": {
-        img: 'img/machadodima.gift',
-        titulo: 'Machado de Diamante',
-        desc: 'Machado afiado para cortar madeira rapidamente.',
-        preco: 'R$1,00 BR',
-        link: '#'
-      },
-      "padima": {
-        img: 'img/padima.gift',
-        titulo: 'Pá de Diamante',
-        desc: 'Pá ultra resistente para escavação rápida.',
-        preco: 'R$1,00 BR',
-        link: '#'
-      }
-      ,
-      "espadadima_soberano": {
-        img: 'img/espadadima.gift',
-        titulo: 'Espada de Diamante',
-        desc: 'Espada lendária com Pilagem V  .',
-        preco: 'R$2,00 BR',
-        link: '#'
-      },
-      "picaretadima_soberano": {
-        img: 'img/picaretadima.gift',
-        titulo: 'Picareta de Diamante',
-        desc: 'Picareta lendária com Fortune V.',
-        preco: 'R$2,00 BR',
-        link: '#'
-      },
-      "machadodima_soberano": {
-        img: 'img/machadodima.gift',
-        titulo: 'Machado de Diamante',
-        desc: 'Machado lendário com Fortune V.',
-        preco: 'R$2,00 BR',
-        link: '#'
-      },
-      "padima_soberano": {
-        img: 'img/padima.gift',
-        titulo: 'Pá de Diamante',
-        desc: 'Pá lendária com Fortune V.',
-        preco: 'R$2,00 BR',
-        link: '#'
-      },
-      "fulldima_soberano": {
-        img: 'img/logo.png',
-        titulo: 'Full Dima',
-        desc: 'Set completo de diamante sem encantamentos.',
-        preco: 'R$2,00 BR',
-        link: '#'
-      }
-      ,
-      "helmet_soberano": {
-        img: 'img/Diamond_Helmet.png',
-        titulo: 'Capacete de Diamante',
-        desc: 'Capacete de diamante sem encantamentos.',
-        preco: 'R$2,00 BR',
-        link: '#'
-      },
-      "chestplate_soberano": {
-        img: 'img/Diamond_Chestplate.png',
-        titulo: 'Peitoral de Diamante',
-        desc: 'Peitoral de diamante sem encantamentos.',
-        preco: 'R$2,00 BR',
-        link: '#'
-      },
-      "leggings_soberano": {
-        img: 'img/Diamond_Leggings.png',
-        titulo: 'Calça de Diamante',
-        desc: 'Calça de diamante sem encantamentos.',
-        preco: 'R$2,00 BR',
-        link: '#'
-      },
-      "boots_soberano": {
-        img: 'img/Diamond_Boots.png',
-        titulo: 'Botas de Diamante',
-        desc: 'Botas de diamante sem encantamentos.',
-        preco: 'R$2,00 BR',
-        link: '#'
-      }
-    };
+  <script src="js/include-barra.js"></script>
+  <script src="js/include-footer.js"></script>
+  <script>
+    // Bloqueia copiar, colar, arrastar e selecionar
+    document.addEventListener('copy', function(e) { e.preventDefault(); });
+    document.addEventListener('cut', function(e) { e.preventDefault(); });
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+    document.querySelectorAll('img').forEach(function(img){
+      img.setAttribute('draggable', 'false');
+    });
+  </script>
+  <script>
+    function mostrarAvisoDiscord(e) {
+      e.preventDefault();
+      document.getElementById('aviso-discord-bg').style.display = 'flex';
+    }
+    function fecharAvisoDiscord() {
+      document.getElementById('aviso-discord-bg').style.display = 'none';
+    }
+    // Fecha aviso ao clicar fora
+    document.getElementById('aviso-discord-bg').addEventListener('click', function(ev){
+      if(ev.target === this) fecharAvisoDiscord();
+    });
+  </script>
+  <script>
+    // Encantamentos dos produtos agora são carregados do JSON externo
+    let encantamentosProdutos = {};
+    fetch('loja/encantamentos.json')
+      .then(res => res.json())
+      .then(data => { encantamentosProdutos = data; });
 
-    // Adiciona evento nos produtos
-    window.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.produto-kit[data-produto]').forEach(function(el) {
-        const id = el.getAttribute('data-produto');
-        el.onclick = function() {
-          abrirModalProduto(
-            produtos[id].img,
-            produtos[id].titulo,
-            produtos[id].desc,
-            produtos[id].preco,
-            produtos[id].link,
-            encantamentosProdutos[id],
-            id
-          );
-        };
-      });
-    });
-  </script>
-  <script>
-    function abrirModalProduto(img, titulo, desc, preco, link, enchants, id) {
-      // Ícone do produto no modal (igual ao da lista)
-      document.getElementById('modal-produto-img').innerHTML = `
-        <div class="produto-icon">
-          <img src='${img}' alt='${titulo}'>
-        </div>
-      `;
-      document.getElementById('modal-produto-titulo').textContent = titulo;
-      // Identifica o kit pelo id do produto
-      let kitNome = '';
-      if (id && id.includes('soberano')) {
-        kitNome = 'Kit Magna Soberano';
-      } else {
-        kitNome = 'Kit Magna Essência';
-      }
-      document.getElementById('modal-produto-info').innerHTML = `<span style='font-weight:bold;color:#cbc05d;'>${kitNome}</span> <span style='color:#ff5252;font-weight:bold;font-size:1.08rem;'>${preco}</span>`;
-      document.getElementById('modal-produto-desc').textContent = desc;
-      // Encantamentos (se houver)
-      var enchantsHtml = '';
-      if (enchants && Array.isArray(enchants)) {
-        enchantsHtml += `<div class="enchants-box">`;
-        enchants.forEach(function(e) {
-          enchantsHtml += `
-            <div class="enchant-item">
-              <span class="enchant-icon"><img src='img/Enchanted_Book.png' alt='Livro Encantado'></span>
-              <span class="enchant-nome">${e.nome}</span>
-              <span class="enchant-nivel">${e.nivel}</span>
-            </div>`;
-        });
-        enchantsHtml += `</div>`;
-      }
-      document.getElementById('modal-produto-enchants').innerHTML = enchantsHtml;
-      // Mostrar modal
-      document.getElementById('modal-produto-bg').style.display = 'flex';
-    }
-    function fecharModalProduto() {
-      document.getElementById('modal-produto-bg').style.display = 'none';
-    }
-    // Fecha modal ao clicar fora
-    document.getElementById('modal-produto-bg').addEventListener('click', function(e){
-      if(e.target === this) fecharModalProduto();
-    });
-  </script>
+    // Dados dos produtos
+    const produtos = {
+      "espadadima": {
+        img: 'img/espadadima.gift',
+        titulo: 'Espada de Diamante',
+        desc: 'Uma espada poderosa feita de diamante.',
+        preco: 'R$1,00 BR',
+        link: '#'
+      },
+      "picaretadima": {
+        img: 'img/picaretadima.gift',
+        titulo: 'Picareta de Diamante',
+        desc: 'Picareta resistente para mineração avançada.',
+        preco: 'R$1,00 BR',
+        link: '#'
+      },
+      "machadodima": {
+        img: 'img/machadodima.gift',
+        titulo: 'Machado de Diamante',
+        desc: 'Machado afiado para cortar madeira rapidamente.',
+        preco: 'R$1,00 BR',
+        link: '#'
+      },
+      "padima": {
+        img: 'img/padima.gift',
+        titulo: 'Pá de Diamante',
+        desc: 'Pá ultra resistente para escavação rápida.',
+        preco: 'R$1,00 BR',
+        link: '#'
+      }
+      ,
+      "espadadima_soberano": {
+        img: 'img/espadadima.gift',
+        titulo: 'Espada de Diamante',
+        desc: 'Espada lendária com Pilagem V  .',
+        preco: 'R$2,00 BR',
+        link: '#'
+      },
+      "picaretadima_soberano": {
+        img: 'img/picaretadima.gift',
+        titulo: 'Picareta de Diamante',
+        desc: 'Picareta lendária com Fortune V.',
+        preco: 'R$2,00 BR',
+        link: '#'
+      },
+      "machadodima_soberano": {
+        img: 'img/machadodima.gift',
+        titulo: 'Machado de Diamante',
+        desc: 'Machado lendário com Fortune V.',
+        preco: 'R$2,00 BR',
+        link: '#'
+      },
+      "padima_soberano": {
+        img: 'img/padima.gift',
+        titulo: 'Pá de Diamante',
+        desc: 'Pá lendária com Fortune V.',
+        preco: 'R$2,00 BR',
+        link: '#'
+      },
+      "fulldima_soberano": {
+        img: 'img/logo.png',
+        titulo: 'Full Dima',
+        desc: 'Set completo de diamante sem encantamentos.',
+        preco: 'R$2,00 BR',
+        link: '#'
+      }
+      ,
+      "helmet_soberano": {
+        img: 'img/Diamond_Helmet.png',
+        titulo: 'Capacete de Diamante',
+        desc: 'Capacete de diamante sem encantamentos.',
+        preco: 'R$2,00 BR',
+        link: '#'
+      },
+      "chestplate_soberano": {
+        img: 'img/Diamond_Chestplate.png',
+        titulo: 'Peitoral de Diamante',
+        desc: 'Peitoral de diamante sem encantamentos.',
+        preco: 'R$2,00 BR',
+        link: '#'
+      },
+      "leggings_soberano": {
+        img: 'img/Diamond_Leggings.png',
+        titulo: 'Calça de Diamante',
+        desc: 'Calça de diamante sem encantamentos.',
+        preco: 'R$2,00 BR',
+        link: '#'
+      },
+      "boots_soberano": {
+        img: 'img/Diamond_Boots.png',
+        titulo: 'Botas de Diamante',
+        desc: 'Botas de diamante sem encantamentos.',
+        preco: 'R$2,00 BR',
+        link: '#'
+      }
+    };
+
+    // Adiciona evento nos produtos
+    window.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.produto-kit[data-produto]').forEach(function(el) {
+        const id = el.getAttribute('data-produto');
+        el.onclick = function() {
+          abrirModalProduto(
+            produtos[id].img,
+            produtos[id].titulo,
+            produtos[id].desc,
+            produtos[id].preco,
+            produtos[id].link,
+            encantamentosProdutos[id],
+            id
+          );
+        };
+      });
+    });
+  </script>
+  <script>
+    function abrirModalProduto(img, titulo, desc, preco, link, enchants, id) {
+      // Ícone do produto no modal (igual ao da lista)
+      document.getElementById('modal-produto-img').innerHTML = `
+        <div class="produto-icon">
+          <img src='${img}' alt='${titulo}'>
+        </div>
+      `;
+      document.getElementById('modal-produto-titulo').textContent = titulo;
+      // Identifica o kit pelo id do produto
+      let kitNome = '';
+      if (id && id.includes('soberano')) {
+        kitNome = 'Kit Magna Soberano';
+      } else {
+        kitNome = 'Kit Magna Básico';
+      }
+      document.getElementById('modal-produto-info').innerHTML = `<span style='font-weight:bold;color:#cbc05d;'>${kitNome}</span> <span style='color:#ff5252;font-weight:bold;font-size:1.08rem;'>${preco}</span>`;
+      document.getElementById('modal-produto-desc').textContent = desc;
+      // Encantamentos (se houver)
+      var enchantsHtml = '';
+      if (enchants && Array.isArray(enchants)) {
+        enchantsHtml += `<div class="enchants-box">`;
+        enchants.forEach(function(e) {
+          enchantsHtml += `
+            <div class="enchant-item">
+              <span class="enchant-icon"><img src='img/Enchanted_Book.png' alt='Livro Encantado'></span>
+              <span class="enchant-nome">${e.nome}</span>
+              <span class="enchant-nivel">${e.nivel}</span>
+            </div>`;
+        });
+        enchantsHtml += `</div>`;
+      }
+      document.getElementById('modal-produto-enchants').innerHTML = enchantsHtml;
+      // Mostrar modal
+      document.getElementById('modal-produto-bg').style.display = 'flex';
+    }
+    function fecharModalProduto() {
+      document.getElementById('modal-produto-bg').style.display = 'none';
+    }
+    // Fecha modal ao clicar fora
+    document.getElementById('modal-produto-bg').addEventListener('click', function(e){
+      if(e.target === this) fecharModalProduto();
+    });
+  </script>
 </body>
 </html>
