@@ -35,9 +35,9 @@
         <div class="bloco-categoria-topo">
           <div class="categoria-header">
             <img src="img/Magma_Cube.png" alt="Magma Cube">
-            <span>Kit Magna Básico</span>
+            <span>Kit Magna Essência</span>
             <span class="preco-mobile">R$1,00 BR</span>
-            <a href="#" class="btn-comprar-kit" onclick="mostrarAvisoDiscord(event)">Comprar Kit</a>
+            <a href="#" class="btn-comprar-kit" onclick="mostrarAvisoDiscord(event, 'basico')">Comprar Kit</a>
           </div>
         </div>
         <div class="produtos-kit">
@@ -74,7 +74,7 @@
             <img src="img/Magma_Cube_SUPER.png" alt="Magma Cube">
             <span>Kit Magna Soberano</span>
             <span class="preco-mobile">R$2,00 BR</span>
-            <a href="#" class="btn-comprar-kit" onclick="mostrarAvisoDiscord(event)">Comprar Kit</a>
+            <a href="#" class="btn-comprar-kit" onclick="mostrarAvisoDiscord(event, 'soberano')">Comprar Kit</a>
           </div>
         </div>
         <div class="produtos-kit">
@@ -130,7 +130,7 @@
     <div id="aviso-discord" style="background:#232a3a;border-radius:12px;padding:18px 22px;box-shadow:0 2px 12px #0006;color:#fff;max-width:320px;text-align:center;display:flex;flex-direction:column;align-items:center;">
       <span style="font-size:1.08rem;font-weight:bold;margin-bottom:8px;">Atenção!</span>
       <span style="font-size:0.98rem;margin-bottom:14px;">Este botão enviará você para o Discord do ResistênciaCraft para prosseguir com a compra!</span>
-      <a href="https://discord.gg/AWc22sPmNm" target="_blank" style="background:#5865F2;color:#fff;padding:8px 18px;border-radius:8px;font-weight:bold;text-decoration:none;box-shadow:0 2px 8px #0003;">Ir para o Discord</a>
+      <a id="discord-link" href="https://discord.gg/AWc22sPmNm" target="_blank" style="background:#5865F2;color:#fff;padding:8px 18px;border-radius:8px;font-weight:bold;text-decoration:none;box-shadow:0 2px 8px #0003;">Ir para o Discord</a>
       <button onclick="fecharAvisoDiscord()" style="margin-top:12px;padding:6px 14px;background:#a00;border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:0.98rem;">Fechar</button>
     </div>
   </div>
@@ -253,8 +253,14 @@
     });
   </script>
   <script>
-    function mostrarAvisoDiscord(e) {
+    function mostrarAvisoDiscord(e, tipo) {
       e.preventDefault();
+      var link = document.getElementById('discord-link');
+      if(tipo === 'soberano') {
+        link.href = 'https://discord.gg/xXxEzWH9wc';
+      } else {
+        link.href = 'https://discord.gg/AWc22sPmNm';
+      }
       document.getElementById('aviso-discord-bg').style.display = 'flex';
     }
     function fecharAvisoDiscord() {
@@ -401,7 +407,7 @@
       if (id && id.includes('soberano')) {
         kitNome = 'Kit Magna Soberano';
       } else {
-        kitNome = 'Kit Magna Básico';
+        kitNome = 'Kit Magna Essência';
       }
       document.getElementById('modal-produto-info').innerHTML = `<span style='font-weight:bold;color:#cbc05d;'>${kitNome}</span> <span style='color:#ff5252;font-weight:bold;font-size:1.08rem;'>${preco}</span>`;
       document.getElementById('modal-produto-desc').textContent = desc;
