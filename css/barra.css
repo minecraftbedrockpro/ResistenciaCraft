@@ -1,6 +1,7 @@
 :root {
   --menu-padding: 60px;       /* margem esquerda da barra onde começa o menu */
   --menu-item-width: 140px;   /* largura de cada item do menu */
+  --menu-button-space: 88px; /* espaço reservado no canto para o botão (ajuste se necessário) */
 }
 
 .barra-fixa {
@@ -19,6 +20,7 @@
 }
 
 .barra-container {
+  position: relative; /* permite posicionamento absoluto do logo dentro do container */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -33,13 +35,18 @@
 .logo {
   margin: 0;
   padding: 0;
-  flex-shrink: 0;
-  height: 70px;
+  flex: 1 1 auto; /* ocupa o espaço disponível ao lado do botão */
   display: flex;
   align-items: center;
+  height: 70px;
+  box-sizing: border-box;
 }
 .logo img {
-  height: 50px;
+  height: 100%;
+  max-height: 70px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
   display: block;
 }
 .logo-barra {
@@ -199,38 +206,72 @@
 
 /* Responsivo (celular) */
 @media (max-width: 768px) {
+  /* Container relativo para posicionamento absoluto do botão */
   .barra-container {
-    padding: 0 15px;
-    justify-content: space-between;
-  }
-  
-  .logo img {
-    height: 45px;
-  }
-  
-  .menu-toggle {
-    display: block !important;
-    order: 2;
+    position: relative;
+    padding: 0 16px; /* limites laterais consistentes */
+    justify-content: center; /* centraliza visualmente o conteúdo principal */
   }
 
+  /* Botão mobile fixo (direita) e visível */
+  .menu-toggle {
+    display: block !important;
+    position: absolute;
+    right: 12px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1010;
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    margin: 0;
+  }
+
+  /* Logo centralizada e limitada lateralmente para não colidir com o botão */
+  .barra-fixa .logo {
+    position: absolute;
+    left: 8px;
+    right: var(--menu-button-space); /* impede que a logo ultrapasse essa linha */
+    height: 100%; /* ocupa de cima a baixo da barra */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* imagem encostada à esquerda */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1005; /* menor que o botão */
+    overflow: hidden; /* evita overflow caso imagem grande */
+  }
+
+  /* Melhorias do painel de menu: usa transform para animação e cobre mais espaço */
   .menu {
     position: fixed !important;
     top: 70px !important;
-    right: -100% !important;
-    width: 220px !important;
+    right: 0 !important;
+    width: 80vw !important; /* ocupa mais área para não deixar conteúdo aparente */
+    max-width: 320px !important;
     height: calc(100vh - 70px) !important;
+    transform: translateX(100%); /* escondido fora da tela */
+    will-change: transform;
+    display: flex !important;
     flex-direction: column !important;
     background-color: #111 !important;
-    padding: 20px 0 !important;
-    transition: right 0.3s ease !important;
-    z-index: 9999 !important;
+    padding: 8px 12px !important; /* adiciona espaçamento lateral interno */
+    transition: transform 0.28s ease !important;
+    z-index: 1030 !important; /* acima da logo */
     margin-left: 0 !important;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+    box-shadow: -2px 0 14px rgba(0,0,0,0.6);
     gap: 0 !important;
+    overflow-y: auto !important; /* permite rolagem interna */
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box;
   }
 
+  /* Quando ativo, traz o painel para tela */
   .menu.menu-ativo {
-    right: 0 !important;
+    transform: translateX(0) !important;
   }
 
   .menu a {
@@ -238,17 +279,19 @@
     width: 100% !important;
     text-align: left !important;
     font-size: 16px !important;
-    padding: 15px 25px !important;
+    padding: 14px 28px !important; /* mais espaço à esquerda para afastar o texto da borda */
     margin: 0 !important;
-    border-bottom: 1px solid #333;
-    transition: all 0.2s !important;
+    border-bottom: 1px solid #222; /* cor mais suave para separação */
+    transition: background 0.18s !important;
+    color: #fff !important;
+    position: relative !important; /* garante pseudo-elementos posicionados corretamente */
   }
-  
+
   .menu a:hover {
     background-color: #222 !important;
     color: #f39c12 !important;
   }
-  
+
   .menu a::after {
     content: "" !important;
     position: absolute !important;
@@ -257,10 +300,16 @@
     height: 2px !important;
     width: 0 !important;
     background: #f39c12 !important;
-    transition: width 0.2s !important;
+    transition: width 0.18s !important;
   }
-  
+
   .menu a:hover::after, .menu a:focus::after {
     width: 100% !important;
+  }
+
+  /* opcional: bloqueia o scroll do body quando classe for adicionada via JS */
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
   }
 }
