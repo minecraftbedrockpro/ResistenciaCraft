@@ -39,7 +39,7 @@
   align-items: center;
 }
 .logo img {
-  height: 40px;
+  height: 50px;
   display: block;
 }
 .logo-barra {
@@ -205,7 +205,7 @@
   }
   
   .logo img {
-    height: 35px;
+    height: 45px;
   }
   
   .menu-toggle {
@@ -217,7 +217,7 @@
     position: fixed !important;
     top: 70px !important;
     right: -100% !important;
-    width: 200px !important;
+    width: 220px !important;
     height: calc(100vh - 70px) !important;
     flex-direction: column !important;
     background-color: #111 !important;
@@ -238,7 +238,7 @@
     width: 100% !important;
     text-align: left !important;
     font-size: 16px !important;
-    padding: 15px 20px !important;
+    padding: 15px 25px !important;
     margin: 0 !important;
     border-bottom: 1px solid #333;
     transition: all 0.2s !important;
