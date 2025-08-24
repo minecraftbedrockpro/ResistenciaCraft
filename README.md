@@ -1,2 +1,2 @@
 # ResistenciaCraft
-Servidor Minecraft Java e Bedrock Website
+Servidor Minecraft Bedrock 
